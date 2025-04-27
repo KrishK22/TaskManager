@@ -30,12 +30,90 @@ export const signup = async (req, res) => {
                 }
             })
 
+        } else {
+            res.status(400).json({ message: "Invalid user data" })
         }
 
+    } catch (error) {
+        console.log(`${error.message}  found in signup controller`)
+        res.status(500).json({
+            message: "Internal Server Error "
+        })
+    }
+}
 
+export const login = async (req, res) => {
+    try {
+
+        const email = req.body.email;
+        const password = req.body.password
+
+        const foundUser = await UserModel.findOne({ email })
+        if (!foundUser) {
+            res.status(500).json({
+                message: 'Invalid Credentials'
+            })
+        }
+
+        const hashPassword = foundUser.password
+        const checkPass = await bcrypt.compare(password, hashPassword)
+        if (!checkPass) {
+            res.status(500).json({
+                mesasge: "Invalid Credentials"
+            })
+        }
+
+        generateToken(foundUser._id.toString(), res)
+        res.status(201).json({
+            message: "User Found",
+            user: {
+                id: foundUser._id.toString(),
+                fullName: foundUser.fullName,
+                email: foundUser.email,
+            }
+        })
 
 
     } catch (error) {
+        console.log(`${error} found in login controller`)
+        res.status(500).json({
+            message: "Internal Server Error"
+        })
+    }
+}
 
+export const checkAuth = (req, res) => {
+    try {
+        const userId = req.user._id;
+        const user = req.user
+        if (!userId) {
+            res.status(400).json({
+                message: "unauthorized"
+            })
+        }
+        res.status(201).json({
+            message: 'authenticated',
+            user: user
+        })
+    } catch (error) {
+        console.log(`${error} found in checkAuth controller`)
+        res.status(500).json({
+            message: "Internal Server Error"
+        })
+    }
+}
+
+export const logout = async (req, res) => {
+    try {
+        res.cookie('jwt', "", { maxAge: 0 });
+        res.status(200).json({
+            message: "LoggedOut Successfully "
+        });
+
+    } catch (error) {
+        console.log(`${error.message} found in logout controller`)
+        res.status(500).json({
+            message: "Internal Server Error"
+        })
     }
 }
