@@ -6,8 +6,11 @@ const taskModel = new mongoose.Schema({
     description: { type: String },
     status: { type: Boolean },
     priority: { type: String, enum: ["Low", "Medium", "High"], required: true },
-    createdAt: { type: Date, default: Date.now }
-})
+},
+    {
+        timestamps: true
+    }
+)
 
 const Task = mongoose.model('Task', taskModel)
 export default Task;    
