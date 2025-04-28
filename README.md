@@ -13,45 +13,23 @@ Before setting up the project locally, ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (v14 or higher)
 - [Git](https://git-scm.com/)
 - A package manager like `npm` or `yarn`
+# Clone the repo
+git clone https://github.com/KrishK22/GroqChatAi.git
 
-## Local Setup
+# Install dependencies in both frontend and backend 
+cd backend 
+npm install
 
-Follow these steps to set up the project locally:
+cd frontend
+npm install
 
-1. **Clone the Repository**
-    ```bash
-    git clone https://github.com/KrishK22/TaskManager
-    cd TaskManager
-    ```
+# Start backend server
+cd backend
+npm run dev
 
-2. **Install Dependencies**
-    Run the following command to install the required dependencies:
-    ```bash
-    npm install
-    ```
-    Or, if you are using Yarn:
-    ```bash
-    yarn install
-    ```
-
-3. **Environment Configuration**
-    Create a `.env` file in the root directory and configure the necessary environment variables. Use the `.env.example` file as a reference:
-    ```bash
-    cp .env.example .env
-    ```
-
-4. **Run the Application**
-    Start the development server:
-    ```bash
-    npm start
-    ```
-    Or, if you are using Yarn:
-    ```bash
-    yarn start
-    ```
-
-5. **Access the Application**
-    Open your browser and navigate to `http://localhost:3000` to view the application.
+#Start Frontend 
+cd frontend
+npm run dev
 
 ## Scripts
 
