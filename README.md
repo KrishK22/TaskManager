@@ -31,24 +31,6 @@ npm run dev
 cd frontend
 npm run dev
 
-## Scripts
-
-Here are some useful scripts you can use during development:
-
-- **Start the development server:**
-  ```bash
-  npm start
-  ```
-
-- **Run tests:**
-  ```bash
-  npm test
-  ```
-
-- **Build for production:**
-  ```bash
-  npm run build
-  ```
 
 ## Contributing
 Contributions are welcome! Please follow these steps to contribute:
