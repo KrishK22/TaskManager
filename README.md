@@ -24,13 +24,16 @@ cd frontend
 npm install
 
 # Start backend server
+```bash
 cd backend
 npm run dev
+```
 
-#Start Frontend 
+# Start Frontend 
+```bash
 cd frontend
 npm run dev
-
+```
 
 ## Contributing
 Contributions are welcome! Please follow these steps to contribute:
