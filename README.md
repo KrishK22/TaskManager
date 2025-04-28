@@ -35,6 +35,16 @@ cd frontend
 npm run dev
 ```
 
+# .env setup
+- should be in root dir of backend folder 
+```bash
+JWT_SECRET=taskmanagerpass123
+MONGODB_URI=mongodb://localhost:27017/TaskManager
+PORT=3000
+```
+
+
+
 ## Contributing
 Contributions are welcome! Please follow these steps to contribute:
 1. Fork the repository.
