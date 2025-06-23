@@ -44,16 +44,3 @@ PORT=3000
 ```
 
 
-
-## Contributing
-Contributions are welcome! Please follow these steps to contribute:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Commit your changes and push the branch.
-4. Open a pull request.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
-
-## Contact
-For any questions or feedback, feel free to reach out at [your-email@example.com].
