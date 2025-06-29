@@ -11,6 +11,7 @@ import { protectedRoute } from './middleware/protectedRoute.js'
 dotenv.config()
 const app = express()
 const PORT = process.env.PORT
+console.log("hello users")
 
 app.use(cookieParse())
 app.use(cors({
